@@ -33,7 +33,7 @@ __global__ void idx(clock_t *t){
 
 /**
  * Init Data
- * 初始化数据
+ * 初始化Matrix
  * **/
 template <typename T>
 void InitMat(T *A, int nxy, int val){
@@ -56,7 +56,7 @@ void printMat(const T*A, int nx, int ny){
             cout << A[j] << " ";
         }
         cout << endl;
-        A += ny;  // 每一行的水平偏移量
+        A += ny;  // 跳转一行的内存地址
     }
     cout << endl;
 
@@ -77,7 +77,7 @@ void matAdd(const T *A, const T* B, T*C, int nx, int ny){
         {
             C[j] = A[j] + B[j];
         }
-        A += ny;  // 跳转一行
+        A += ny;  // 跳转一行的内存地址
         B += ny;
         C += ny;
     }
@@ -85,6 +85,7 @@ void matAdd(const T *A, const T* B, T*C, int nx, int ny){
 }
 
 /**
+ * Check the correction of data on CPU
  * nx: row
  * ny: col
  * **/
@@ -114,11 +115,13 @@ bool matCheckEqual(const T *A, const T* B, int nx, int ny){
  * 如果使用线性存储，其实是又转换成了1D的索引
  * **/
 __global__ void matAddCUDA(const float *A, const float *B, float*C, int nx, int ny){
+    // calculate 2d idx
     // x是水平方向的！与矩阵索引方式不同
     int thread_id_x = blockDim.x * blockIdx.x + threadIdx.x;  // 行方向
     int thread_id_y = blockDim.y * blockIdx.y + threadIdx.y;  // 列方向
 
-    int idx = thread_id_y * ny + thread_id_x;  // Mapping the 2D thread index into 1D index 
+    // Mapping the 2D thread index into 1D index 
+    int idx = thread_id_y * ny + thread_id_x;  
     // printf("Current Thread ID : (%d, %d) \n", thread_id_x, thread_id_y);
 
     if(thread_id_x < ny && thread_id_y < nx){
@@ -140,6 +143,7 @@ int main(){
     int col = 500;
     int numElements = row * col;
     int numBytes = numElements * sizeof(float);
+    cout << "Matrix size: row=" << row << " col=" << col << endl;
 
     // Malloc Host memory
     float *h_A = (float *) malloc(numBytes);
@@ -156,13 +160,13 @@ int main(){
     // Init data
     InitMat(h_A, numElements, 1);
     if(is_debug){
-        cout << "MAtric A: " << endl;
+        cout << "Matrix A: " << endl;
         printMat(h_A, row, col);
     }
 
     InitMat(h_B, numElements, 2);
     if(is_debug){
-        cout << "MAtric B: " << endl;
+        cout << "Matrix B: " << endl;
         printMat(h_B, row, col);
     }
 
@@ -176,19 +180,20 @@ int main(){
     float *d_C;
     cudaMalloc((void**)&d_C, numBytes);
 
-    // Copy: Host to Device
+    // MemCopy: Host to Device
     printf("Copy input data from the host memory to the CUDA device\n");
     // target, source
     cudaMemcpy(d_A, h_A, numBytes, cudaMemcpyHostToDevice);
     cudaMemcpy(d_B, h_B, numBytes, cudaMemcpyHostToDevice);
 
-    // Launch the Vector Add CUDA Kernel
+    // ThreadsPerBlock
     // 2D block with 2D thread
     dim3 threadsPerBlock(32, 32);
     cout << "threadDimX: " << threadsPerBlock.x << endl;  // 水平分布的thread
     cout << "threadDimY: " << threadsPerBlock.y << endl;  // 竖直分布的thread
     // cout << "z: " << threadsPerBlock.z << endl;  // default=1
 
+    // BlocksPerGrid
     // 保证xy方向的索引都被检索到
     int blockDimX = (row - 1) / threadsPerBlock.x + 1;
     int blockDimY = (col - 1) / threadsPerBlock.y + 1;
@@ -196,6 +201,7 @@ int main(){
     cout << "blockDimX: " << blocksPerGrid.x << endl;  // 水平分布的block
     cout << "blockDimY: " << blocksPerGrid.y << endl;  // 竖直分布的block
 
+    // Launch the matAdd CUDA Kernel
     matAddCUDA<<<threadsPerBlock, blocksPerGrid>>>(d_A, d_B, d_C, row, col);
     cudaError_t cudaStatus = cudaGetLastError();
     if (cudaStatus != cudaSuccess){

@@ -1,6 +1,4 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
-make: *** No rule to make target 'all'.  Stop.
-
 # GNU Make 4.1
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2014 Free Software Foundation, Inc.
@@ -8,7 +6,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Jul 14 22:14:59 2022
+# Make data base, printed on Fri Jul 15 09:41:41 2022
 
 # Variables
 
@@ -19,15 +17,11 @@ GNUMAKEFLAGS :=
 # automatic
 ?F = $(notdir $?)
 # environment
-PAPERSIZE = a4
-# environment
 DESKTOP_SESSION = ubuntu
 # default
 .SHELLFLAGS := -c
 # environment
 XDG_SESSION_TYPE = x11
-# environment
-VSCODE_LOG_NATIVE = false
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # environment
@@ -41,39 +35,29 @@ GDMSESSION = ubuntu
 # environment
 XMODIFIERS = @im=ibus
 # makefile
-CURDIR := /home/yaohua/CLionProjects/learn_cuda
+CURDIR := /home/antenna/App/Learn/learn_cuda
 # makefile
 SHELL = /bin/sh
-# environment
-JRE_HOME = /usr/local/jdk-9.0.1/jre
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
 # environment
 _ = /usr/share/code/code
 # environment
-PM_PACKAGES_ROOT = /home/yaohua/packman-repo
-# environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # makefile
 MAKEFILE_LIST := 
-# environment
-JAVA_HOME = /usr/local/jdk-9.0.1
 # automatic
 @F = $(notdir $@)
 # environment
 GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/code.desktop
 # environment
-USERNAME = yaohua
+USERNAME = antenna
 # environment
 MAKELEVEL := 0
-# environment
-MANDATORY_PATH = /usr/share/gconf/ubuntu.mandatory.path
 # environment
 XDG_DATA_DIRS = /usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop
 # environment
 DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
-# environment
-VSCODE_VERBOSE_LOGGING = true
 # environment
 CLUTTER_IM_MODULE = xim
 # environment
@@ -81,25 +65,23 @@ LESSOPEN = | /usr/bin/lesspipe %s
 # environment
 LC_NAME = zh_CN.UTF-8
 # environment
-VSCODE_CWD = /home/yaohua
+VSCODE_CWD = /home/antenna
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
-PATH = /home/yaohua/.local/bin:/home/yaohua/App/anaconda3/bin:/usr/local/cuda-10.2/bin:/home/yaohua/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/jdk-9.0.1/bin:/usr/local/jdk-9.0.1/jre/bin:/usr/local/jdk-9.0.1/bin:/usr/local/jdk-9.0.1/jre/bin
+PATH = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/cuda/bin
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
 GJS_DEBUG_OUTPUT = stderr
 # environment
-SESSION_MANAGER = local/precision-5820-tower:@/tmp/.ICE-unix/2761,unix/precision-5820-tower:/tmp/.ICE-unix/2761
+SESSION_MANAGER = local/antenna-workstation:@/tmp/.ICE-unix/1712,unix/antenna-workstation:/tmp/.ICE-unix/1712
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
 TEXTDOMAIN = im-config
 # environment
 XDG_MENU_PREFIX = gnome-
-# environment
-VSCODE_LOG_STACK = false
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # default
@@ -111,7 +93,7 @@ XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 3409
+GIO_LAUNCHED_DESKTOP_FILE_PID = 3630
 # automatic
 %F = $(notdir $%)
 # environment
@@ -119,15 +101,11 @@ DISPLAY = :1
 # environment
 GTK_IM_MODULE = ibus
 # environment
-VSCODE_PIPE_LOGGING = true
-# environment
-PWD = /home/yaohua/CLionProjects/learn_cuda
+PWD = /home/antenna/App/Learn/learn_cuda
 # environment
 XDG_SEAT = seat0
 # environment
-SSH_AGENT_PID = 2839
-# environment
-PKG_CONFIG_PATH = /usr/local/opencv4/lib/pkgconfig:/usr/local/opencv4/lib/pkgconfig:
+SSH_AGENT_PID = 1807
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # environment
@@ -135,15 +113,15 @@ GTK_MODULES = gail:atk-bridge
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
-HOME = /home/yaohua
+HOME = /home/antenna
 # environment
-LD_LIBRARY_PATH = /usr/local/cuda-10.2/lib64
+LD_LIBRARY_PATH = /usr/local/cuda/lib
 # environment
 LESSCLOSE = /usr/bin/lesspipe %s %s
 # environment
-VSCODE_CODE_CACHE_PATH = /home/yaohua/.config/Code/CachedData/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5
+VSCODE_CODE_CACHE_PATH = /home/antenna/.config/Code/CachedData/b06ae3b2d2dbfe28bca3134cc6be65935cdfea6a
 # environment
-LOGNAME = yaohua
+LOGNAME = antenna
 # environment
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # automatic
@@ -165,25 +143,21 @@ MAKE = $(MAKE_COMMAND)
 # default
 MAKECMDGOALS := all
 # environment
-QT_IM_MODULE = ibus
+QT_IM_MODULE = xim
 # environment
 SHLVL = 1
 # environment
 GNOME_SHELL_SESSION_MODE = ubuntu
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-fa9997a3-2327-4a1e-92e6-ca6daf6f11c8.sock
+XDG_SESSION_ID = 2
 # environment
-XDG_SESSION_ID = 3
-# environment
-USER = yaohua
+USER = antenna
 # environment
 LC_MONETARY = zh_CN.UTF-8
 # makefile
 .DEFAULT_GOAL := 
 # environment
 XDG_CURRENT_DESKTOP = Unity
-# environment
-CLASSPATH = .:.::/usr/local/jdk-9.0.1/lib:/usr/local/jdk-9.0.1/jre/lib:/usr/local/jdk-9.0.1/lib:/usr/local/jdk-9.0.1/jre/lib
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # environment
@@ -195,9 +169,7 @@ MAKE_COMMAND := make
 # automatic
 *F = $(notdir $*)
 # environment
-LANGUAGE = en_US:en
-# environment
-VSCODE_IPC_HOOK = /run/user/1000/vscode-82d3d356-1.67.2-main.sock
+VSCODE_IPC_HOOK = /run/user/1000/vscode-176b3495-1.69.1-main.sock
 # makefile
 MAKEFLAGS = pqrR
 # environment
@@ -213,8 +185,6 @@ LC_PAPER = zh_CN.UTF-8
 # environment
 QT_ACCESSIBILITY = 1
 # environment
-DEFAULTS_PATH = /usr/share/gconf/ubuntu.default.path
-# environment
 TEXTDOMAINDIR = /usr/share/locale/
 # default
 MAKEFILES := 
@@ -226,8 +196,6 @@ LC_NUMERIC = zh_CN.UTF-8
 LC_MEASUREMENT = zh_CN.UTF-8
 # environment
 LC_ALL = C
-# environment
-clashdir = /home/yaohua/.local/share/clash
 # environment
 QT4_IM_MODULE = xim
 # environment
@@ -251,9 +219,9 @@ LC_ADDRESS = zh_CN.UTF-8
 # environment
 LANG = C
 # environment
-VSCODE_PID = 3409
+VSCODE_PID = 3630
 # variable set hash-table stats:
-# Load=120/1024=12%, Rehash=0, Collisions=21/142=15%
+# Load=105/1024=10%, Rehash=0, Collisions=18/127=14%
 
 # Pattern-specific Variable Values
 
@@ -261,9 +229,9 @@ VSCODE_PID = 3409
 
 # Directories
 
-# . (device 66306, inode 28180859): 9 files, no impossibilities.
+# . (device 66305, inode 8394208): 8 files, no impossibilities.
 
-# 9 files, no impossibilities in 1 directories.
+# 8 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -298,7 +266,6 @@ makefile:
 #  Modification time never checked.
 #  File has not been updated.
 
- 
 # Not a target:
 GNUmakefile:
 #  Implicit rule search has been done.
@@ -314,12 +281,15 @@ GNUmakefile:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 17 / storage = 150 B / avg = 8 B
-# current buf: size = 8162 B / used = 150 B / count = 17 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 16 / storage = 144 B / avg = 9 B
+# current buf: size = 8162 B / used = 144 B / count = 16 / avg = 9 B
 
-# strcache performance: lookups = 20 / hit rate = 15%
+# strcache performance: lookups = 19 / hit rate = 15%
 # hash-table stats:
-# Load=17/8192=0%, Rehash=0, Collisions=1/20=5%
-# Finished Make data base on Thu Jul 14 22:14:59 2022
+ 
+make: *** No rule to make target 'all'.  Stop.
+
+# Load=16/8192=0%, Rehash=0, Collisions=1/19=5%
+# Finished Make data base on Fri Jul 15 09:41:41 2022
 
  
